@@ -15,7 +15,7 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
-model job {
+model Job {
   id               Int      @id @default(autoincrement())
   slug             String   @unique
   title            String
