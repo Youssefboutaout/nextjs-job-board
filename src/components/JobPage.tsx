@@ -3,6 +3,7 @@ import { job } from '@prisma/client';
 import { Banknote, Briefcase, Clock, Globe2, MapPin } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Markdown from './Markdown';
 
 interface JobPageProps {
     job: job;
@@ -65,6 +66,9 @@ export default function JobPage({job:{
             </p>                                     
           </div>
         </div>
+      </div>
+      <div>
+        {description && <Markdown>{description}</Markdown>}
       </div>
   
     </section>
