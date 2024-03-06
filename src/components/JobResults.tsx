@@ -53,7 +53,7 @@ export default async function JobResults({
       skip,
     });
     const countPromise = prisma.job.count({where})
-    const [jobs, totalResults] = await promise.al([jobsPromise, countPromise])
+    const [jobs, totalResults] = await Promise.all([jobsPromise, countPromise])
     return (
       <div className="grow space-y-4">
         {jobs.map((job) => (
